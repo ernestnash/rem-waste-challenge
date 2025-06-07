@@ -42,7 +42,7 @@ export default defineConfig({
 })
 ```
 
-I created `src/styles.css` with:
+I modified my `src/index.css` with:
 
 ```css
 @import "tailwindcss";
@@ -51,7 +51,7 @@ I created `src/styles.css` with:
 and imported it in `main.jsx`:
 
 ```js
-import './styles.css'
+import './index.css'
 ```
 
 Finally, I added helpful scripts to `package.json`:
@@ -74,12 +74,9 @@ I organized the codebase into clear directories:
 
 ```plaintext
 src/
-├── api/                # API helpers (e.g. skipsByLocation.js)
 ├── components/         # Reusable UI components
 ├── pages/              # Page views
 ├── hooks/              # Custom hooks (e.g. useFetchSkips.js)
-├── styles/             # Global styles or themes
-├── utils/              # Plain helper functions
 ├── App.jsx             # Root component
 └── main.jsx            # Entry point
 ```
@@ -93,7 +90,7 @@ My objective was to completely reimagine the “Choose Your Skip Size” page wh
 * **Distinct Visual Hierarchy**: Introduced a hero section with a summary of selected address and waste type before the options.
 * **Interactive Selection**: Swapped a traditional grid for a horizontally scrollable carousel of skip options on desktop, and a swipeable list on mobile.
 * **Rich Detail**: Enhanced each skip card with expandable sections for more details (dimensions, weight limits) without navigating away.
-* **Call-to-Action Emphasis**: Placed a sticky action bar at the bottom with a “Next” button that becomes active upon selection.
+* **Call-to-Action Emphasis**: Placed a sticky action bar at the bottom with a “Continue” and “Back” button that becomes active upon selection.
 * **Maintainable Code**: Modular components with clear responsibilities: `SkipCarousel`, `SkipList`, `SkipDetailsModal`, and `ActionBar`.
 
 **Steps I followed**:
