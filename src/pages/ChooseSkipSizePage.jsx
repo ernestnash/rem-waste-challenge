@@ -1,0 +1,54 @@
+import React, { useState } from 'react';
+import HeroInfo from '../components/HeroInfo';
+import SkipCarousel from '../components/SkipCarousel';
+import SkipDetailsModal from '../components/SkipDetailsModal';
+import ActionBar from '../components/ActionBar';
+import useFetchSkips from '../hooks/useFetchSkips';
+
+const ChooseSkipSizePage = () => {
+  // In a real app, these would come from context or router state
+  const address = 'LE10 1SH';
+  const wasteType = 'Garden Waste';
+
+  // Fetch skips based on postcode and area
+  const { data: skips, loading, error } = useFetchSkips('LE10 1SH', 'Lowestoft');
+
+  const [selectedSkip, setSelectedSkip] = useState(null);
+  const [detailSkip, setDetailSkip] = useState(null);
+
+  const handleSelect = (skip) => {
+    setSelectedSkip(skip);
+  };
+
+  const handleDetails = (skip) => {
+    setDetailSkip(skip);
+  };
+
+  const handleCloseDetails = () => {
+    setDetailSkip(null);
+  };
+
+  const handleNext = () => {
+    // TODO: navigate to summary or next step
+    console.log('Proceeding with:', selectedSkip);
+  };
+
+//   console.log("data ", skips);
+  return (
+    <div className="max-w-5xl mx-auto px-4 py-6">
+      <HeroInfo address={address} wasteType={wasteType} onEdit={() => {/* navigate back */}} />
+
+      {loading && <p className="text-center">Loading skip options...</p>}
+      {error && <p className="text-center text-red-600">Failed to load skip options.</p>}
+
+      {!loading && skips && (
+        <SkipCarousel skips={skips} onSelect={handleSelect} onDetails={handleDetails} selectedSkip={selectedSkip} />
+      )}
+
+      <SkipDetailsModal skip={detailSkip} onClose={handleCloseDetails} />
+      <ActionBar selectedSkip={selectedSkip} onNext={handleNext} />
+    </div>
+  );
+};
+
+export default ChooseSkipSizePage;
