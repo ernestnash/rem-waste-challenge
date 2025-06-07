@@ -1,6 +1,6 @@
 import React from 'react';
-import SkipCard from './SkipCard';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import SkipCard from './SkipCard';
 
 const SkipCarousel = ({ skips, onSelect, onDetails, selectedSkip }) => {
   const containerRef = React.useRef(null);

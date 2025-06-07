@@ -1,8 +1,7 @@
-import React from 'react';
 
 const SkipCard = ({ skip, onSelect, onDetails, isSelected }) => {
-    const vatAmount = (skip.price_before_vat * skip.vat) / 100;
-    const totalPrice = skip.price_before_vat + vatAmount;
+    // const vatAmount = (skip.price_before_vat * skip.vat) / 100;
+    // const totalPrice = skip.price_before_vat + vatAmount;
     //   const dummyImage = '/skip.jpg';
     const imageSrc = (skip.size === 20 || skip.size === 40)
         ? 'https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/20-yarder-skip.jpg'
@@ -45,8 +44,9 @@ const SkipCard = ({ skip, onSelect, onDetails, isSelected }) => {
                     )}
                 </div> */}
                 <h2 className="font-semibold text-lg">{skip.size}m³ Skip</h2>
-                <p className="text-sm text-gray-600">Hire: {skip.hire_period_days} days</p>
-                <p className="mt-2 text-xl font-bold">£{totalPrice.toFixed(2)} incl. VAT</p>
+                <p className="text-sm text-gray-600">{skip.hire_period_days} days Hire Period</p>
+                <p className="mt-2 text-3xl font-bold">£{skip.price_before_vat}</p>
+                {/* <p className="mt-2 text-xl font-bold">£{totalPrice.toFixed(2)} incl. VAT</p> */}
                 <div className="mt-4 flex justify-between items-center">
                     <button
                         onClick={() => onDetails(skip)}

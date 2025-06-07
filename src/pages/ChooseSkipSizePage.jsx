@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import ActionBar from '../components/ActionBar';
 import HeroInfo from '../components/HeroInfo';
 import SkipCarousel from '../components/SkipCarousel';
 import SkipDetailsModal from '../components/SkipDetailsModal';
-import ActionBar from '../components/ActionBar';
 import useFetchSkips from '../hooks/useFetchSkips';
 
 const ChooseSkipSizePage = () => {
@@ -32,6 +32,10 @@ const ChooseSkipSizePage = () => {
     // TODO: navigate to summary or next step
     console.log('Proceeding with:', selectedSkip);
   };
+  const handleBack = () => {
+    // TODO: navigate back to previous page
+    console.log('Returning to previous page');
+  };
 
 //   console.log("data ", skips);
   return (
@@ -46,7 +50,7 @@ const ChooseSkipSizePage = () => {
       )}
 
       <SkipDetailsModal skip={detailSkip} onClose={handleCloseDetails} />
-      <ActionBar selectedSkip={selectedSkip} onNext={handleNext} />
+      <ActionBar selectedSkip={selectedSkip} onNext={handleNext} onBack={handleBack} />
     </div>
   );
 };

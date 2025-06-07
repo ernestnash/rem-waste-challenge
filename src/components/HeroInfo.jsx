@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaEdit } from 'react-icons/fa';
 
 const HeroInfo = ({ address, wasteType, onEdit }) => (
