@@ -9,7 +9,7 @@ yarn create vite rem-waste-challenge --template react
 cd rem-waste-challenge
 yarn
 git init
-git remote add origin <your-public-github-url>
+git remote add origin  https://github.com/ernestnash/rem-waste-challenge.git
 git checkout -b main
 ```
 
