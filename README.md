@@ -23,8 +23,7 @@ Then, I integrated Tailwind CSS as a Vite plugin following the official guide:
 
 ```bash
 # Install Tailwind plugin for Vite
-yarn add -D tailwindcss @tailwindcss/vite
-npx tailwindcss init -p
+yarn add tailwindcss @tailwindcss/vite
 ```
 
 In `vite.config.ts`, I registered the plugin alongside React:
@@ -129,19 +128,6 @@ My objective was to completely reimagine the “Choose Your Skip Size” page wh
 ---
 
 ### 5. Running the Project
-
-To run and build the project, I used these commands:
-
-```bash
-# Install dependencies
-yarn
-
-# Start the development server
-yarn dev
-
-# Build for production
-yarn build
-```
 
 To run and build the project, I used these commands:
 
