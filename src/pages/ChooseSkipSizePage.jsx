@@ -38,7 +38,7 @@ const ChooseSkipSizePage = () => {
     console.log('Returning to previous page');
   };
 
-  //   console.log("data ", skips);
+  //   console.log("loaded data ", skips);
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
       {/* Progress Stepper */}
