@@ -4,6 +4,7 @@ import HeroInfo from '../components/HeroInfo';
 import SkipCarousel from '../components/SkipCarousel';
 import SkipDetailsModal from '../components/SkipDetailsModal';
 import useFetchSkips from '../hooks/useFetchSkips';
+import Stepper from '../components/Stepper';
 
 const ChooseSkipSizePage = () => {
   // In a real app, these would come from context or router state
@@ -37,10 +38,13 @@ const ChooseSkipSizePage = () => {
     console.log('Returning to previous page');
   };
 
-//   console.log("data ", skips);
+  //   console.log("data ", skips);
   return (
-    <div className="max-w-5xl mx-auto px-4 py-6">
-      <HeroInfo address={address} wasteType={wasteType} onEdit={() => {/* navigate back */}} />
+    <div className="max-w-7xl mx-auto px-4 py-6">
+      {/* Progress Stepper */}
+      <Stepper currentStep={2} />
+      {/* HeroInfo/Header with info */}
+      <HeroInfo address={address} wasteType={wasteType} onEdit={() => {/* navigate back */ }} />
 
       {loading && <p className="text-center">Loading skip options...</p>}
       {error && <p className="text-center text-red-600">Failed to load skip options.</p>}
