@@ -23,7 +23,7 @@ Then, I integrated Tailwind CSS as a Vite plugin following the official guide:
 
 ```bash
 # Install Tailwind plugin for Vite
-yarn add tailwindcss @tailwindcss/vite
+yarn add -D tailwindcss @tailwindcss/vite
 ```
 
 In `vite.config.ts`, I registered the plugin alongside React:
