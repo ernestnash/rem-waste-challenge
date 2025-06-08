@@ -1,6 +1,6 @@
 import './App.css'
 import ChooseSkipSizePage from './pages/ChooseSkipSizePage'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
